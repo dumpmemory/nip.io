@@ -8,14 +8,14 @@ Dead simple wildcard DNS for any IP address.
 > The project maintainer Roopinder Singh (1981–2024) have passed away.
 > [sslip.io](https://github.com/cunnie/sslip.io) could be considered a spirtual successor.
 
-[NIP.IO](http://nip.io) was powered by [PowerDNS](https://powerdns.com) with a simple,
+[NIP.IO](https://nip.io/) was powered by [PowerDNS](https://powerdns.com) with a simple,
 custom [PipeBackend](https://doc.powerdns.com/authoritative/backends/pipe.html):
 [backend.py](nipio/backend.py)
 
 Head to [NIP.IO](https://nip.io/) for more details. (now hosted by sslip.io)
 
-NIP.IO is licensed under [Apache 2.0](LICENSE.txt), and is a free service run by
-[Exentrique Solutions](http://exentriquesolutions.com)
+NIP.IO is licensed under [Apache 2.0](LICENSE.txt), and was a free service ran by
+Exentrique Solutions.
 
 ## Environment Variables Configuration Overrides
 
@@ -63,5 +63,5 @@ This is useful if you're creating your own [Dockerfile](Dockerfile).
   
 ## Development
 
-If you'd like to develop and hack with nip.io, then the easiest way is to install [Poetry](https://python-poetry.org/)
-and then run `./build.sh` which invokes Poetry. `./build.sh` will run linting and tests as well.
+If you'd like to develop and hack with nip.io, then the easiest way is to install [uv](https://docs.astral.sh/uv/)
+and then run `./build.sh` which invokes uv. `./build.sh` will run linting and tests as well.
