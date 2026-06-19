@@ -843,13 +843,13 @@ class DynamicBackendTest(unittest.TestCase):
         os.environ["NIPIO_SOA_RETRY"] = "41"
         os.environ["NIPIO_SOA_EXPIRY"] = "42"
         os.environ["NIPIO_SOA_MINIMUM_TTL"] = "43"
-        os.environ[
-            "NIPIO_NAMESERVERS"
-        ] = "ns1.example.com=127.0.0.31 ns2.example.com=127.0.0.32"
+        os.environ["NIPIO_NAMESERVERS"] = (
+            "ns1.example.com=127.0.0.31 ns2.example.com=127.0.0.32"
+        )
         os.environ["NIPIO_WHITELIST"] = "whitelist1=10.0.0.0/8"
-        os.environ[
-            "NIPIO_BLACKLIST"
-        ] = "black_listed=10.0.0.111 black_listed2=10.0.0.112"
+        os.environ["NIPIO_BLACKLIST"] = (
+            "black_listed=10.0.0.111 black_listed2=10.0.0.112"
+        )
 
         backend = self._configure_backend()
         assert_that(backend.id).is_equal_to("99")
@@ -871,12 +871,12 @@ class DynamicBackendTest(unittest.TestCase):
 
     def test_configure_with_env_lists_config(self) -> None:
         os.environ["NIPIO_WHITELIST"] = "whitelist1=10.0.0.0/8"
-        os.environ[
-            "NIPIO_BLACKLIST"
-        ] = "black_listed=10.0.0.111 black_listed2=10.0.0.112"
-        os.environ[
-            "NIPIO_CAA"
-        ] = "letsencrypt=letsencrypt.org;validationmethods=http-01"
+        os.environ["NIPIO_BLACKLIST"] = (
+            "black_listed=10.0.0.111 black_listed2=10.0.0.112"
+        )
+        os.environ["NIPIO_CAA"] = (
+            "letsencrypt=letsencrypt.org;validationmethods=http-01"
+        )
         backend = self._configure_backend(filename="backend_test_no_lists.conf")
 
         assert_that(backend.whitelisted_ranges).is_equal_to(
