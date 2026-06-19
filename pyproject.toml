@@ -1,23 +1,34 @@
-[tool.poetry]
+[project]
 name = "nipio"
 version = "0.1.0"
 description = ""
-authors = ["rs <rs@midearth.co.uk>"]
+authors = [{ name = "rs", email = "rs@midearth.co.uk" }]
+requires-python = ">=3.9,<4"
+classifiers = [
+    "Development Status :: 7 - Inactive",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
+[dependency-groups]
+dev = [
+    "assertpy>=1.1",
+    "mypy>=1.0",
+    "pytest>=8.0",
+    "ruff>=0.15.18",
+]
 
-[tool.poetry.group.dev.dependencies]
-black = "^22.6.0"
-mypy = "^0.971"
-flake8 = "^7.2.0"
-assertpy = "^1.1"
-mock = "^4.0.3"
-types-mock = "^4.0.15"
-pytest = "^8.4.0"
-isort = "^6.0.1"
-colorama = "^0.4.6"
+[tool.uv]
+default-groups = "all"
+
+[tool.uv.build-backend]
+module-root = ""
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.11.23,<0.12.0"]
+build-backend = "uv_build"

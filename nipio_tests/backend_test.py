@@ -20,7 +20,7 @@ import unittest
 from typing import Callable, List
 
 from assertpy import assert_that
-from mock.mock import call, patch
+from unittest.mock import call, patch
 
 from nipio.backend import DynamicBackend
 

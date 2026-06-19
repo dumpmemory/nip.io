@@ -17,10 +17,8 @@
 
 set -e
 
-poetry install
-
-poetry run black --check --diff --color -q nipio nipio_tests setup.py
-poetry run flake8 nipio nipio_tests setup.py
-poetry run isort --diff --check --color nipio nipio_tests/ setup.py
-poetry run mypy nipio nipio_tests setup.py
-poetry run pytest --junitxml="result.xml"
+uv sync
+uv run ruff check nipio nipio_tests setup.py
+uv run ruff format --check nipio nipio_tests setup.py
+uv run mypy nipio nipio_tests setup.py
+uv run pytest --junitxml="result.xml"

@@ -6,6 +6,7 @@
 build
 nip.io.egg-info
 dist
+.venv/
 
 .idea/*.xml
 .idea/inspectionProfiles
